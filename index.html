@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<link href="src/style.css" rel="stylesheet" type="text/css" />
+
+    <head>
+                Webgl Boilerplate Demo Scene :)
+
+                <script src="lib/webgl-utils.js"></script>
+                <script src="lib/webgl-debug.js"></script>
+                <script src="lib/cuon-utils.js"></script>
+                <script src="lib/cuon-matrix.js"></script>
+
+                <script src="src/vector.js"></script>
+                <script src="src/quaternion.js"></script>
+                <script src="src/texture.js"></script>
+                <script src="src/initTextures.js"></script>
+                <script src="src/shaders.js"></script>
+                <script src="src/animate.js"></script>
+                <script src="src/bind.js"></script>
+                <script src="src/actor.js"></script>
+                <script src="src/scene.js"></script>
+                <script src="src/demoscene.js"></script>
+                <script src="src/geometry.js"></script>
+                <script src="src/sphere.js"></script>
+                <script src="src/cube.js"></script>
+                <script src="src/client.js"></script>
+                <script src="src/main.js"></script>
+    </head>
+
+    <body onload="main()">
+        <div>
+            <canvas id="webgl" width="512" height="512"></canvas>
+
+
+            <div class = "outer">
+                <div class = "middle">
+                    <div class = "inner">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+
+            <div class="slidecontainer">
+                Rotation 
+                <input type="range" min="0" max="360" value="315" class="slider" id="sliderR">
+            </div>
+            
+        </div>
+        
+        <div>
+            Choose a lighting mode:
+            <div>
+                <button id="lights" onClick="reloadShaders(0)"> Lighting On! </button>
+            </div>
+
+            <div>
+                <button id="normals" onClick="reloadShaders(1)"> Show Normals! </button>
+            </div>
+
+            <div>
+                <button id="dark" onClick="reloadShaders(2)"> No Lighting! </button>
+            </div>
+        </div>
+
+    </body>
+
+</html>
