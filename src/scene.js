@@ -69,6 +69,8 @@ Scene.prototype.updateSlider = function(val)
 
 Scene.prototype.draw = function()
 {
+	// break this out into an init function that 
+	// takes initial scene params to generalize code?
     this.viewMatrix.setRotate(-15,1,0,0); // tilt down at scene
     this.viewMatrix.rotate(this.rotationSliderValue,0,1,0);
 
@@ -86,3 +88,57 @@ Scene.prototype.draw = function()
 
     this.heirarchy.draw(this.heirarchy.position, this.heirarchy.scale, this.heirarchy.rotation);
 }
+
+// adds a cube to the scene with a given position, scale, and rotation
+// takes 2 Vector() then a Quaternion(). provide null for defaults.
+// perhaps replace the color index with a real material system
+Scene.prototype.addCube = function(p_, s_, r_, colorIndex)
+{
+	var temp = new Cube();
+	temp.scene = this;
+	temp.index = colorIndex;
+
+	if(p_!= null)
+	{
+		temp.position.set(p_.x,p_.y,p_.z);
+	}
+	if(s_!= null)
+	{
+		temp.scale.set(s_.x,s_.y,s_.z);
+	}
+	if(r_!= null)
+	{
+		temp.rotation.set(r_);
+	}
+
+	this.heirarchy.children.push(temp);
+}
+
+// adds a sphere to the scene with a given position, scale, and rotation
+// takes 2 Vector() then a Quaternion(). provide null for defaults.
+// perhaps replace the color index with a real material system
+Scene.prototype.addSphere = function(p_, s_, r_, colorIndex)
+{
+	var temp = new Sphere();
+	temp.scene = this;
+	temp.index = colorIndex;
+
+	// take this out and just pass reference back for opt-in vibe
+	if(p_!= null)
+	{
+		temp.position.set(p_.x,p_.y,p_.z);
+	}
+	if(s_!= null)
+	{
+		temp.scale.set(s_.x,s_.y,s_.z);
+	}
+	if(r_!= null)
+	{
+		temp.rotation.set(r_);
+	}
+
+	this.heirarchy.children.push(temp);
+}
+
+
+

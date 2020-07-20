@@ -20,6 +20,29 @@ DemoScene.prototype = new Scene();
 
 DemoScene.prototype.stuff = function()
 {
+	var pos1 = new Vector(-0.5,0.2,0.0);
+	var scale1 = new Vector(0.2,0.2,0.2);
+	this.addCube(
+		pos1,
+		scale1,
+		null,
+		0
+	);
+
+	this.addCube(
+		new Vector(0.0,-0.5,0.0),
+		new Vector(0.7,0.05,0.7),
+		null,
+		0
+	);
+
+	this.addSphere(
+		new Vector(0.0,0.5,0.0),
+		new Vector(0.7,0.7,0.7),
+		null,
+		0
+	);
+	/*
     var floorSize = 1;
     var delta = 0.03;
 
@@ -53,51 +76,5 @@ DemoScene.prototype.stuff = function()
 //    s2.index = 1;
 
     this.heirarchy.children.push(s2);
+	*/
 }
-
-// actors ---------------------------------------------------------------------
-
-function FunCube()
-{
-    Cube.call(this);
-    this.index = 0;
-    this.name = "FunCube";
-}
-
-FunCube.prototype = new Cube();
-
-function FloorCube()
-{
-    Cube.call(this);
-    this.index = 0;
-    this.name = "FloorCube";
-}
-
-FloorCube.prototype = new Cube();
-
-function FunSphere()
-{
-    Sphere.call(this);
-    this.index = 0;
-}
-
-FunSphere.prototype = new Sphere();
-
-
-// snippets  ------------------------------------------------------------------
-
-    /*
-    for(var i = 0; i < floorSize; i++)
-    {
-        for (var j = 0; j < floorSize; j++)
-        {
-            var test = new FunCube();
-            test.scene = this;
-            test.scale.set(0.5,0.5,0.5);
-            test.position.set(i * delta,0.0,-j*delta);
-            //test.rotation.setRotate(30,1,0,0);
-
-            this.heirarchy.children.push(test);
-        }
-    }
-    */

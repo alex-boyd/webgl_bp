@@ -19,6 +19,8 @@ var NUM_CUBES = 1;
 var NUM_SPHERES = 1;
 var SPHERES_OFFSET = 0;
 
+// color arrays should be set by initialization function(s)
+// not lurking in here hardcoded
 // colors
 var cubeColors = new Float32Array
 ([
@@ -29,8 +31,8 @@ var cubeColors = new Float32Array
 
 var sphereColors = new Float32Array
 ([
-    1.0,1.0,1.0,1.0,
-    0.75,0.75,0.45,0.9
+    1.0,1.0,1.0,1.0
+    //0.75,0.75,0.45,0.9
 ]);
 
 function concatF32(a,b)
@@ -42,6 +44,8 @@ function concatF32(a,b)
     return result;
 }
 
+// rename this packGeometry or something?
+// packs all our vertices into one array to be transfered to GPU
 function geometry()
 {
     var vertices = new Float32Array();

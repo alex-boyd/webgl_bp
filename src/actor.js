@@ -17,10 +17,10 @@ function Actor()
     this.scale = new Vector(1.0,1.0,1.0); // x, y, z
     this.rotation = new Quaternion(); 
     this.texture = null;
-    this.index = null;
+    this.index = null; // color index/material, should have wrapper
     this.mesh = null;
 
-    // "dirty" bit to recompute model matrix
+    // "dirty" bit to recompute model matrix?
     //this.dirty = 1;
 
     // cached model matrix 
@@ -30,12 +30,14 @@ function Actor()
 // causes the actor and its children to draw themselves to the screen
 Actor.prototype.draw = function(p_,s_,r_)
 {
+	/*
     //animation!?!? horrible place to put this
     if(this.name === "FunCube")
     {
         this.rotation.setRotate(this.scene.frame,1,0,0);
 //        this.rotation.rotate(this.scene.frame,0,1,0);
     }
+	*/
 
     var newPosition = new Vector(p_.x, p_.y, p_.z);
     newPosition.set(p_.x, p_.y, p_.z);
