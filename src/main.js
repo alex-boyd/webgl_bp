@@ -13,6 +13,10 @@ function main()
 {
     // Retrieve <canvas> element
     var canvas = document.getElementById('webgl');
+	canvas.width = document.body.clientWidth;
+	canvas.height = document.body.clientHeight;
+	var canvasW = canvas.width;
+	var canvasH = canvas.width
 
     // Get the rendering context for WebGL
     gl = getWebGLContext(canvas);

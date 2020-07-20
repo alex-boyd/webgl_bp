@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<link href="src/style.css" rel="stylesheet" type="text/css" />
-
-    <head>
-                Webgl Boilerplate Demo Scene :)
-
+<title>WebGL Demo</title>
+<style>
+	body {
+		margin: 0;
+		overflow: hidden;
+	}
+	canvas {
+		display: block;
+		width: 100vw;
+		height: 100vh;
+	}
+</style>
+	<head>
                 <script src="lib/webgl-utils.js"></script>
                 <script src="lib/webgl-debug.js"></script>
                 <script src="lib/cuon-utils.js"></script>
@@ -32,7 +40,7 @@
 
     <body onload="main()">
         <div>
-            <canvas id="webgl" width="512" height="512"></canvas>
+            <canvas id="webgl"></canvas>
 
 
             <div class = "outer">
