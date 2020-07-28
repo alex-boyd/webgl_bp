@@ -15,20 +15,7 @@ function main()
 {
     // Retrieve <canvas> element
     var canvas = document.getElementById('webgl');
-
-	// make a square fullscreen canvas
-	var canvasW = document.body.clientWidth; 
-	var canvasH = document.body.clientHeight; 
-	if(canvasW < canvasH)
-	{ 
-		canvas.width = canvasW;
-		canvas.height = canvasW;
-	}
-	else
-	{
-		canvas.width = canvasH;
-		canvas.height = canvasH;
-	}
+	resizeCanvas();
 
     // Get the rendering context for WebGL
     gl = getWebGLContext(canvas);
@@ -80,19 +67,8 @@ function main()
     // Start drawing
     var tick = function() 
     {
-		// make a square fullscreen canvas
-		var canvasW = document.body.clientWidth; 
-		var canvasH = document.body.clientHeight; 
-		if(canvasW < canvasH)
-		{ 
-			canvas.width = canvasW;
-			canvas.height = canvasW;
-		}
-		else
-		{
-			canvas.width = canvasH;
-			canvas.height = canvasH;
-		}
+		resizeCanvas();
+		resizeViewport(gl);
 
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
