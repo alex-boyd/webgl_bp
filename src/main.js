@@ -8,8 +8,6 @@ initializes webgl and calls drawing routines
 */
 
 var gl;
-var aspectRatio;
-const CLEAR_COLOR = new Vector(0.6,0.6,0.6); // aspirational
 
 function main() 
 {
