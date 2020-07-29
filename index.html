@@ -13,17 +13,6 @@
 		margin:auto;
 		width: 100vw;
 		height: 100vh;
-		/*position: absolute;
-		top:0;
-		bottom:0;
-		left:0;
-		right:0;
-			width:420px;
-				height:420px;
-					*/
-
-		/*width: 100vw;*/
-		/*height: 100vh;*/
 	}
 </style>
 	<head>
@@ -54,41 +43,7 @@
     <body onload="main()">
         <div>
             <canvas id="webgl"></canvas>
-
-
-            <div class = "outer">
-                <div class = "middle">
-                    <div class = "inner">
-                    </div>
-                </div>
-            </div>
         </div>
-
-
-        <div>
-
-            <div class="slidecontainer">
-                Rotation 
-                <input type="range" min="0" max="360" value="315" class="slider" id="sliderR">
-            </div>
-            
-        </div>
-        
-        <div>
-            Choose a lighting mode:
-            <div>
-                <button id="lights" onClick="reloadShaders(0)"> Lighting On! </button>
-            </div>
-
-            <div>
-                <button id="normals" onClick="reloadShaders(1)"> Show Normals! </button>
-            </div>
-
-            <div>
-                <button id="dark" onClick="reloadShaders(2)"> No Lighting! </button>
-            </div>
-        </div>
-
     </body>
 
 </html>
