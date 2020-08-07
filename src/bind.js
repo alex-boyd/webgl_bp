@@ -11,7 +11,7 @@ x, y, z, r, g, b, a, nx, ny, nz, u, v
 
 */
 
-var STRIDE = 10;
+var STRIDE = 12;
 var FSIZE; 
 var ISIZE; 
 var u_ModelMatrix;
