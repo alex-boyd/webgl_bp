@@ -94,7 +94,8 @@ function makeSphere(r,g,b,a)
             vert.push(si * sj);  // X (reused for normal)
             vert.push(cj);       // Y (reused for normal)
             vert.push(ci * sj);  // Z (reused for normal)
-            //u,v if we were using them
+			vert.push(0); //temporary UVs
+			vert.push(0); //temporary UVs
         }
     }
 
