@@ -9,16 +9,6 @@ functions take input in the form of a prepacked array.
 vertices are entered sequentially in the following format:
 x, y, z, r, g, b, a, nx, ny, nz, //u, v
 
-cube layout from textbook
-
-      v6----- v5
-     /|      /|
-    v1------v0|
-    | |     | |
-    | |v7---|-|v4
-    |/      |/
-    v2------v3
-
 6 sides, 8 vertices, 24 vertices to render, 12 triangles to render
 
 */
@@ -51,13 +41,13 @@ function drawCube(gl, modelMatrix, viewMatrix, index)
     gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, FSIZE * STRIDE, (/*offset*/0 + 0) * FSIZE);
     gl.vertexAttribPointer(a_Color, 4, gl.FLOAT, false, FSIZE * STRIDE, (/*offset*/0 + 3) * FSIZE);
     gl.vertexAttribPointer(a_Normal, 3, gl.FLOAT, false, FSIZE * STRIDE, (/*offset*/0 + 7) * FSIZE);
-//    gl.vertexAttribPointer(a_TexCoord, 2, gl.FLOAT, false, FSIZE * STRIDE, (/*offset*/0 + 10) * FSIZE);
+    gl.vertexAttribPointer(a_TexCoord, 2, gl.FLOAT, false, FSIZE * STRIDE, (/*offset*/0 + 10) * FSIZE);
 
     // 5. enable assignment or attribute variable
     gl.enableVertexAttribArray(a_Position);
     gl.enableVertexAttribArray(a_Color);
     gl.enableVertexAttribArray(a_Normal);
-//    gl.enableVertexAttribArray(a_TexCoord);
+    gl.enableVertexAttribArray(a_TexCoord);
 
     // Pass the matrix to transform the normal based on the model matrix to u_NormalMatrix
     var normalMatrix = new Matrix4();

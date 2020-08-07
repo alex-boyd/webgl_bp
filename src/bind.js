@@ -26,8 +26,8 @@ var u_AmbientLight;
 var u_LightColor;
 var u_LightPosition;
 var u_mode;
-//var a_TexCoord;
-//var u_Sampler;
+var a_TexCoord;
+var u_Sampler;
 
 function bind(gl, vertices)
 {
@@ -59,9 +59,8 @@ function bind(gl, vertices)
     u_AmbientLight = gl.getUniformLocation(gl.program, 'u_AmbientLight');
     u_ViewMatrix = gl.getUniformLocation(gl.program, 'u_fViewMatrix');
     u_vViewMatrix = gl.getUniformLocation(gl.program, 'u_vViewMatrix');
-	// sampler is for sampling textures
-	// u_Sampler = gl.getUniformLocation(gl.program, "u_Sampler0");
-    if (!u_MvpMatrix || !u_NormalMatrix || !u_ViewMatrix || !u_LightColor || /*!u_Sampler ||*/ !u_LightPosition　|| !u_AmbientLight) 
+	u_Sampler = gl.getUniformLocation(gl.program, "u_Sampler0");
+    if (!u_MvpMatrix || !u_NormalMatrix || !u_ViewMatrix || !u_LightColor || !u_Sampler || !u_LightPosition　|| !u_AmbientLight) 
     { 
         console.log('Failed to get the storage location');
         return;
@@ -88,15 +87,12 @@ function bind(gl, vertices)
         return -1;
     }
 
-    /*
-	// disabled texture code
     a_TexCoord = gl.getAttribLocation(gl.program, 'a_TexCoord');
     if (a_TexCoord < 0) 
     {
         console.log('Failed to get the storage location of a_TexCoord');
         return -1;
     }
-    */
 
     // Set the light color (white)
     gl.uniform3f(u_LightColor, 1.0, 1.0, 0.3);
@@ -109,7 +105,7 @@ function bind(gl, vertices)
     gl.uniform1i(u_mode, 0);
 
     // set texture
-    //gl.uniform1i(u_Sampler, 0);
+    gl.uniform1i(u_Sampler, 0);
 
     // Unbind the buffer object when finished
     //gl.bindBuffer(gl.ARRAY_BUFFER, null);

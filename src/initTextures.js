@@ -4,6 +4,8 @@ webgl boilerplate
 
 some working(?) texture code
 
+*/
+
 function initTextures(textures)
 {
     for(var i = 0; i < textures.length; i++)
@@ -69,4 +71,4 @@ function initTextures(textures)
     }
 }
 
-*/
+

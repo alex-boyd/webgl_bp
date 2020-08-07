@@ -48,17 +48,16 @@ function main()
     gl.frontFace(gl.CW);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    /*
 	// disabled texture code goes here
     var textures = [];
     textures.push(new Panel());
     initTextures(textures);
-    */
 
     //client program
     bind(gl,geometry());
     var demo = new DemoScene(gl);
     //Scene.prototype.initTextures.call(sci);
+    initTextures(textures);
 
     //document.onkeydown = function(event_){ keyDown(event_); };,
 
@@ -71,6 +70,7 @@ function main()
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
         //demo.rotationSliderValue = sliderR.value;
+        demo.rotationSliderValue = 45;
 
         Scene.prototype.draw.call(demo);
 
